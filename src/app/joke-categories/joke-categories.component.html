@@ -1,1 +1,16 @@
-<p>joke-categories works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <select name="jokecats" id="category" [(ngModel)]="selectedCategory" (change)="getJokeCategory()" class="custom-select">
+                    <option *ngFor="let category of categories" [value]="category">
+                        {{ category }}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <h1>{{ categoryJoke?.value }}</h1>
+        </div>
+    </div>
+</div>
