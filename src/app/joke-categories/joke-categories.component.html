@@ -1,7 +1,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            <div class="form-group" *ngIf="categories$ | async as categories">
+            <div class="form-group" 
+                 *ngIf="categories$ | async as categories">
                 <select name="jokecats" id="category" [(ngModel)]="selectedCategory" (change)="getJokeCategory()" class="custom-select">
                     <option *ngFor="let category of categories" [value]="category">
                         {{ category }}
@@ -9,7 +10,7 @@
                 </select>
             </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8" *ngIf="categoryJoke$ | async as categoryJoke">
             <h1>{{ categoryJoke?.value }}</h1>
         </div>
     </div>

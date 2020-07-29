@@ -12,7 +12,7 @@ export class JokeCategoriesComponent implements OnInit {
   
   categories$: Observable<string[]>;
   selectedCategory: string;
-  categoryJoke: Joke;
+  categoryJoke$: Observable<Joke>;
 
   constructor(private jokeService: JokeService) { }
 
@@ -21,10 +21,8 @@ export class JokeCategoriesComponent implements OnInit {
   }
 
   getJokeCategory(): void {
-    console.log('The cat selected is ' + this.selectedCategory);
-    this.jokeService.getRandomJokeFromCategory(this.selectedCategory).subscribe( data => {
-      this.categoryJoke = data;
-    });
+    // console.log('The cat selected is ' + this.selectedCategory);
+    this.categoryJoke$ = this.jokeService.getRandomJokeFromCategory(this.selectedCategory);
   }
 
 }
