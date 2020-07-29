@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12" *ngIf="randomJoke$ | async as randomJoke">
             <h1> {{ randomJoke?.value }} </h1>
         </div>
     </div>
