@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JokeService } from '../shared/joke.service';
 import { Joke } from '../shared/joke';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-joke-categories',
@@ -9,17 +10,14 @@ import { Joke } from '../shared/joke';
 })
 export class JokeCategoriesComponent implements OnInit {
   
-  categories: string[];
+  categories$: Observable<string[]>;
   selectedCategory: string;
   categoryJoke: Joke;
 
   constructor(private jokeService: JokeService) { }
 
   ngOnInit(): void {
-    this.jokeService.getJokeCategories().subscribe(data => {
-      this.categories = data;
-    });
-    // need to add these to a forms drop down component
+    this.categories$ = this.jokeService.getJokeCategories();
   }
 
   getJokeCategory(): void {
