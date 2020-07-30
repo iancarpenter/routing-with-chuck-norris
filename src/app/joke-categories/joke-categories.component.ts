@@ -8,21 +8,16 @@ import { Observable } from 'rxjs';
   templateUrl: './joke-categories.component.html',
   styleUrls: ['./joke-categories.component.css']
 })
-export class JokeCategoriesComponent implements OnInit {
+export class JokeCategoriesComponent {
   
-  categories$: Observable<string[]>;
+  categories$ = this.jokeService.jokeCategories$;
   selectedCategory: string;
   categoryJoke$: Observable<Joke>;
 
   constructor(private jokeService: JokeService) { }
 
-  ngOnInit(): void {
-    this.categories$ = this.jokeService.getJokeCategories();
-  }
-
-  getJokeCategory(): void {
-    // console.log('The cat selected is ' + this.selectedCategory);
-    this.categoryJoke$ = this.jokeService.getRandomJokeFromCategory(this.selectedCategory);
+  getJokeCategory(): void {    
+    this.categoryJoke$ = this.jokeService.getRandomJokeFromCategory(this.selectedCategory);    
   }
 
 }
