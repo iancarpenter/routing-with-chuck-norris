@@ -19,14 +19,11 @@ export class JokeService {
      tap(data => console.log(data))
     );
 
-  
-
-  getJokeCategories(): Observable<string[]> {
-    return this.http.get<string[]>(this.jokeCategoriesURL)
-    .pipe(
-      tap(data => console.log(data))
+  jokeCategories$ = this.http.get<string[]>(this.jokeCategoriesURL)
+   .pipe(
+     tap(data => console.log(data))
     );
-  }
+
   
   getRandomJokeFromCategory(category: string): Observable<Joke> {
     return this.http.get<Joke>(`https://api.chucknorris.io/jokes/random?category=${category}`)
