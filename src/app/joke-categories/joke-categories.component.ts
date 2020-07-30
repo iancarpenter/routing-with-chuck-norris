@@ -16,9 +16,8 @@ export class JokeCategoriesComponent {
 
   constructor(private jokeService: JokeService) { }
 
-  getJokeCategory(): void {
-    // console.log('The cat selected is ' + this.selectedCategory);
-    this.categoryJoke$ = this.jokeService.getRandomJokeFromCategory(this.selectedCategory);
+  getJokeCategory(): void {    
+    this.categoryJoke$ = this.jokeService.getRandomJokeFromCategory(this.selectedCategory);    
   }
 
 }
