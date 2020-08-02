@@ -13,11 +13,11 @@ import { JokeResolver } from './shared/joke-resolver.service';
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'random', 
               component: RandomJokeComponent,
-              resolve: { joke: JokeResolver } 
+              resolve: { resolvedRandomJoke: JokeResolver } 
             },
             { path: 'categories', component: JokeCategoriesComponent },
             { path: '**', component: PageNotFoundComponent }
-        ], { enableTracing: true })
+        ], { enableTracing: false })
     ],
     exports: [RouterModule]
 })
