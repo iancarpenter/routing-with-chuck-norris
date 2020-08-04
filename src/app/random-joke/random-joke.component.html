@@ -1,6 +1,9 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-12" *ngIf="randomJoke">
+        <div class="col-md-2">
+            <img src="{{ randomJoke?.icon_url }}" alt="the chuck norris icon">
+        </div>
+        <div class="col-md-10">
             <h1> {{ randomJoke?.value }} </h1>
         </div>
     </div>
