@@ -1,11 +1,12 @@
-<!-- Make it look like a billboard! -->
-<div class="container">
+<!-- <div [ngStyle]="{background: 'url(../../assets/images/ChuckRandom.png)'}"> -->
+<!-- <div [style.background]="'url(../../assets/images/ChuckRandom.png)'"> -->
+<div class="container mt-5">
     <div class="row">
-        <div class="col-md-2">
-            <img src="{{ randomJoke?.icon_url }}" alt="the chuck norris icon">
+        <div class="col-md-9">
+            <img src="../../assets/images/ChuckRandom.png" class="img-fluid" alt="Chuck on a bike with ROCKETS">
         </div>
-        <div class="col-md-10">
-            <h1> {{ randomJoke?.value }} </h1>
+        <div class="col-md-5 positioned">
+            <h5> {{ randomJoke?.value }} </h5>
         </div>
     </div>
 </div>
