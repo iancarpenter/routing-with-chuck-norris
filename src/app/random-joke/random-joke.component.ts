@@ -19,7 +19,7 @@ export class RandomJokeComponent implements OnInit {
     // moved away from the declarative method here because of the use of resolver
     this.route.data.subscribe(data => {
       const resolvedRandomJoke = data['resolvedRandomJoke'];
-      this.randomJoke = resolvedRandomJoke;
+      this.randomJoke = resolvedRandomJoke;      
     });   
   }
            
