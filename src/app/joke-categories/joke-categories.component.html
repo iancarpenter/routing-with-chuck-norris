@@ -1,22 +1,44 @@
 <ng-container *ngIf="categories$ | async as categories">
-    <div class="container mt-5">
-        <div class="row border align-items-center">
-            <div class="col-md-2 no-gutters">
-                <label for="jokecats" class="label">Select a category:</label>
-            </div>
-            <div class="col-md-2 form-group">
-                <select name="jokecats" id="category" [(ngModel)]="selectedCategory" (change)="getJokeCategory()"
-                    class="custom-select">
-                    <option *ngFor="let category of categories" [value]="category">
-                        {{ category }}
-                    </option>
-                </select>
-            </div>
+    <div class="container mt-5 border">
+        <!-- <div class="row border"> -->
+            <!-- <form>
+                <div class="form-group row">
+                    <label for="jokecats" class="col-sm-2 col-form-label">Select a category:</label>
+                    <div class="col-sm-10">
+                        <select name="jokecats" 
+                                id="category" 
+                                [(ngModel)]="selectedCategory"
+                                (change)="getJokeCategory()" class="form-control">
+                            <option *ngFor="let category of categories" [value]="category">
+                               {{ category }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </form> -->
+            <form>
+                <div class="form-group row">
+                    <label for="colFormLabel" class="col-md-2 col-form-label">Select a category:</label>
+                    <div class="col-sm-10">
+                        <!-- <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label"> -->
+                        <select name="jokecats" 
+                                id="category" 
+                                [(ngModel)]="selectedCategory"
+                                (change)="getJokeCategory()" class="form-control">
+                            <option *ngFor="let category of categories" [value]="category">
+                               {{ category }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        <!-- </div> -->
+        <!-- <div class="row border">
             <ng-container *ngIf="categoryJoke$ | async as categoryJoke">
                 <div class="col-md-8">
                     <h4>{{ categoryJoke?.value }}</h4>
                 </div>
             </ng-container>
-        </div>
-    </div>
+        </div> -->
+    </div>    
 </ng-container>
