@@ -9,4 +9,8 @@ import { slideInAnimation } from './app.animation';
 })
 export class AppComponent {
   title = 'Routing with Chuck Norris';  
+
+  goToUrl(): void {
+    window.location.href="https://api.chucknorris.io/";    
+  }
 }
