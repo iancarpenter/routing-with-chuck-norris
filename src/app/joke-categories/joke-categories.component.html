@@ -1,9 +1,9 @@
 <ng-container *ngIf="categories$ | async as categories">
-    <div class="container mt-5">
+    <div class="container mt-5">        
         <form>
             <div class="form-group row">
                 <label for="colFormLabel" class="col-md-2 col-form-label">Select a category:</label>
-                <div class="col-sm-10">                    
+                <div class="col-sm-4">                    
                     <select name="jokecats" 
                             id="category" 
                             [(ngModel)]="selectedCategory" 
@@ -14,13 +14,19 @@
                         </option>
                     </select>
                 </div>
-            </div>
-            
+            </div>            
+        </form>    
+        <div class="row">
+            <div class="col-md-8 mx-auto d-block">
+                <img src="../../assets/images/ChuckNorrisThumbsUp.jpg" class="img-fluid" alt="Thumbs up from Chuck">            
+            </div>                     
+        </div>                                    
+        <div class="row mt-5">
             <ng-container *ngIf="categoryJoke$ | async as categoryJoke">                
                 <div class="col-md-12 border text-center">                    
                     <h4>{{ categoryJoke?.value }}</h4>
                 </div>
             </ng-container>            
-        </form>                
+        </div>        
     </div>
 </ng-container>
