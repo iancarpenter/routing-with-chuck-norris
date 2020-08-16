@@ -3,4 +3,4 @@
 ![Chuck Norris Hat Tip](https://oraclefrontovikcom.files.wordpress.com/2020/08/cnrfrontpage.png)
 
 
-A not too serious app so I can experiment with the Angular Routing functionality. 
+A not too serious app which is useful for experimenting with the Angular Routing functionality. 
