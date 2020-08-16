@@ -1,4 +1,6 @@
 # RoutingWithChuckNorris
 
+![Chuck Norris Hat Tip](https://oraclefrontovikcom.files.wordpress.com/2020/08/cnrfrontpage.png)
 
-A fun app built to experiment with the Angular Routing functionality. 
+
+A not too serious app so I can experiment with the Angular Routing functionality. 
